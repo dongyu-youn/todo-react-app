@@ -1,0 +1,32 @@
+#servie_bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+#friends-display-link {
+    text-align: center;
+    display: block;
+    background-color: #fafafa;
+    padding: 15px 0px;
+    font-size: 18px;
+    
+  }
+
+.user-img {
+    border-radius: 30px;
+    vertical-align: middle;
+    margin: 0px 0px 0px 30px;
+}
+
+.user-name {
+    vertical-align: middle;
+    font-weight: blod;
+    font-size: 20px;
+    padding-left: 10px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to kokoa clone</title>
+    <link rel="stylesheet" href="css/styles.css">
+   
+  </head>
+  <body>
+    <div class="status-bar">
+
+    <div class="status-bar__column">
+        <span>No service</span>
+        <!-- to do: Wifi Icon -->
+        <i class="fas fa-wifi"></i>
+    </div>
+    
+    <div class="status-bar__column">
+        <span>18:43</span>
+    </div>
+
+    <div class="status-bar__column">
+        <span>11%</span>
+        <!-- battery Icon -->
+        <i class="fas fa-battery-full fa-xl"></i>
+        <!-- lightning Icon   -->
+        <i class="fas fa-bolt"></i>
+    </div>
+
+    </div>
+
+    <div class="welcome">
+        <h1 class="welcome__title">Welcom to KaKaoTalk</h1>
+        <p class="welcom__text">If you have a KaKao Account, <br> ling in with your email of phone number.</p>
+    </div> 
+
+    <form method="get" id="login-form" >      
+        <input name="id" type="text" placeholder="Email or phone number"/>
+        <input name="password" type="text" placeholder="Password"/>
+        <input type="submit" value="Log In" />
+        <input type="submit" value="Sign up" />
+        <a  href="#">Find KaKao Account or Password</a>
+    </form>
+
+   
+
+
+
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

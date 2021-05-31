@@ -1,0 +1,19 @@
+ 
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+ 
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    
+}
+
+
+.status-bar__colum:first-child span {
+    margin-right: 5px;
+}
+
+
