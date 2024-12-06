@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Todo List</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="body">
+    <div id="root">
+      <ul class="myList">
+        <div>
+          <button class="myList__button" data-filter="all">all</button>
+          <button class="myList__button" data-filter="active">active</button>
+          <button class="myList__button" data-filter="complete">
+            complete
+          </button>
+        </div>
+        <div class="myList__div" data-complete="false">
+          <input type="checkbox" class="myList__checkbox" />
+          <li>장보기</li>
+          <button class="myList__delete">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <div class="myList__div" data-complete="false">
+          <input type="checkbox" class="myList__checkbox" />
+          <li>공부하기</li>
+          <button class="myList__delete">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </ul>
+
+      <div class="button">
+        <input type="text" class="todoInput" placeholder="Add Todo" />
+        <button class="addButton">Add</button>
+      </div>
+    </div>
+    <script>
+      const list = document.querySelector(".myList");
+      const button = document.querySelector(".addButton");
+      const input = document.querySelector(".todoInput");
+
+      const del = document.querySelectorAll(".myList__delete");
+
+      const checkbox = document.querySelectorAll(".myList__checkbox");
+
+      const filters = document.querySelectorAll(".myList__button");
+
+      const now = "all";
+
+      filters.forEach((v) => {
+        v.addEventListener("click", (e) => {
+          //현재요소
+          const filter = e.target.getAttribute("data-filter");
+
+          const div = document.querySelectorAll(".myList__div");
+
+          div.forEach((v) => {
+            console.log(v.getAttribute("data-complete"));
+            const complete = v.getAttribute("data-complete") === true;
+            switch (filter) {
+              case "all":
+                console.log("all");
+                v.style.display = "";
+                break;
+              case "active":
+                v.style.display = complete ? "none" : "";
+                break;
+              case "complete":
+                v.style.display = complete ? "" : "none";
+                break;
+            }
+          });
+          console.log(v.target.getAttribute("data-complete"));
+
+          console.log(filter);
+          //div요소
+        });
+      });
+
+      console.log(del);
+
+      del.forEach((v) => {
+        v.addEventListener("click", (e) => {
+          e.target.closest(".myList__div").remove();
+        });
+      });
+
+      checkbox.forEach((v) => {
+        v.addEventListener("change", (e) => {
+          const div = document.querySelector(".myList__div");
+
+          div.setAttribute("data-filter", e.target.checked);
+          div.classList.toggle("complete");
+        });
+      });
+
+      button.addEventListener("click", () => {
+        console.log(input.value);
+        const text = input.value;
+        const li = document.createElement("li");
+        console.log(li);
+        li.textContent = text;
+        list.appendChild(li);
+      });
+    </script>
+  </body>
+</html>

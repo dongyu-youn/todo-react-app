@@ -1,0 +1,83 @@
+.body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(36, 36, 150, 1) 35%,
+    rgba(5, 100, 181, 1) 64%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 60%;
+  height: 70%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.myList {
+  flex: 1 0 auto;
+}
+
+.button {
+  display: flex;
+  padding: 20px;
+}
+
+.todoInput {
+  display: flex;
+  flex: 1 0 auto;
+  padding: 10px;
+}
+
+.button input {
+  border: none;
+}
+
+.button button {
+  background-color: orange;
+}
+
+.button button:hover {
+  filter: brightness(125%);
+}
+
+.myList__div {
+  display: flex;
+}
+
+.myList__button {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+.myList__button::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 0px;
+  bottom: 10px;
+  left: -50px;
+  transform: translateX(50%);
+}
+
+.myList__button:hover::before {
+  width: 100%;
+}
